@@ -64,11 +64,126 @@ h6 {
   isolation: isolate;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  align-items: center;
 }
 
 /* CSS RESET ABOVE */
+
+/* * {
+  outline: 1px dashed red;
+} */
+
+body {
+  background-image: url('images/bg-mobile.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  padding: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 430px;
+  width: 100%;
+}
+
+.manager {
+  padding: 2rem;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 12px 100px 12px 12px;
+}
+
+.icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  background-color: hsl(229, 57%, 11%);
+  padding: 0.7rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.status {
+  color: hsl(243, 100%, 93%);
+  background-color: hsl(228, 56%, 26%);
+  margin-top: 1rem;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.storage-left {
+  font-size: 0.75rem;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: hsl(229, 57%, 11%);
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0rem 1.5rem;
+
+  strong {
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+}
+
+input[type='range'] {
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: hsl(229, 57%, 11%);
+  margin-top: 16px;
+}
+
+.range-limits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* for non-firefox based browsers */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  margin: 1px;
+  background-color: white;
+  border-radius: 50%;
+  outline: 3px solid hsl(335, 100%, 65%);
+}
+
+/* for firefox based browser's like zen */
+input[type='range']::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  margin: 1px;
+  background-color: white;
+  border-radius: 50%;
+  outline: 3px solid hsl(335, 100%, 65%);
+}

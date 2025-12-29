@@ -35,6 +35,65 @@
   </head>
 
   <body>
-    You’ve used 815 GB of your storage 185 GB Left 0 GB 1000 GB
+    <div class="wrapper">
+      <div class="manager">
+        <img
+          src="./images/logo.svg"
+          alt="brand-logo"
+        />
+        <div class="icons">
+          <div class="icon">
+            <img
+              src="./images/icon-document.svg"
+              alt="document-icon"
+            />
+          </div>
+          <div class="icon">
+            <img
+              src="./images/icon-folder.svg"
+              alt="folder-icon"
+            />
+          </div>
+          <div class="icon">
+            <img
+              src="./images/icon-upload.svg"
+              alt="upload-icon"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="status">
+        <p>You’ve used <b class="storage-used">0 GB</b> of your storage</p>
+        <input
+          type="range"
+          min="0"
+          max="1000"
+          value="0"
+        />
+        <div class="range-limits"><span>0 GB</span> <span>1000 GB</span></div>
+        <div class="storage-left"><strong>1000</strong> GB LEFT</div>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.querySelector('input');
+      slider.addEventListener('input', updateSlider);
+
+      function updateSlider(e) {
+        const percentToCover = (e.target.value / 1000) * 100;
+        console.log({ percentToCover });
+
+        slider.style.backgroundImage = `
+              linear-gradient(to right, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) ${percentToCover}%, hsl(229, 57%, 11%) ${percentToCover}%, hsl(229, 57%, 11%) 100%)
+            `;
+
+        const storageUsed = document.querySelector('.storage-used');
+        storageUsed.textContent = `${Math.trunc(e.target.value)} GB`;
+
+        const storageLeft = document.querySelector('.storage-left strong');
+        storageLeft.textContent = `${1000 - Math.trunc(e.target.value)}`;
+      }
+    </script>
   </body>
 </html>
