@@ -194,7 +194,7 @@ input[type='range']::-moz-range-thumb {
   outline: 3px solid hsl(335, 100%, 65%);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   body {
     background-image: url('images/bg-desktop.png');
     background-size: contain;
@@ -226,6 +226,7 @@ input[type='range']::-moz-range-thumb {
         left: 85%;
         width: max-content;
         padding: 0.5rem 1rem;
+        min-width: 15rem;
       }
 
       .pointer {
