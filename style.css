@@ -76,13 +76,10 @@ body {
   font-style: normal;
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 
 /* CSS RESET ABOVE */
-
-/* * {
-  outline: 1px dashed red;
-} */
 
 body {
   background-image: url('images/bg-mobile.png');
@@ -118,6 +115,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  :hover {
+    cursor: pointer;
+  }
 }
 
 .status {
@@ -131,7 +132,6 @@ body {
 }
 
 .storage-left {
-  font-size: 0.75rem;
   font-weight: 700;
   position: absolute;
   left: 50%;
@@ -143,6 +143,7 @@ body {
   align-items: center;
   gap: 1rem;
   padding: 0rem 1.5rem;
+  justify-content: center;
 
   strong {
     font-weight: 700;
@@ -167,6 +168,10 @@ input[type='range'] {
   margin-bottom: 1rem;
 }
 
+.pointer {
+  display: none;
+}
+
 /* for non-firefox based browsers */
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -178,7 +183,7 @@ input[type='range']::-webkit-slider-thumb {
   outline: 3px solid hsl(335, 100%, 65%);
 }
 
-/* for firefox based browser's like zen */
+/* for firefox based browsers */
 input[type='range']::-moz-range-thumb {
   height: 12px;
   width: 12px;
@@ -186,4 +191,51 @@ input[type='range']::-moz-range-thumb {
   background-color: white;
   border-radius: 50%;
   outline: 3px solid hsl(335, 100%, 65%);
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url('images/bg-desktop.png');
+    background-size: contain;
+    background-position: bottom;
+    background-color: hsl(229, 57%, 11%);
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    font-size: 16px;
+
+    .manager {
+      flex: 1;
+      padding: 3rem;
+
+      .icons {
+        margin-top: 2.5rem;
+      }
+    }
+
+    .status {
+      align-self: flex-end;
+      flex: 2;
+
+      .storage-left {
+        top: -40%;
+        left: 85%;
+        width: max-content;
+        padding: 0.5rem 1rem;
+      }
+
+      .pointer {
+        display: inline;
+        padding: 16px;
+        position: absolute;
+        background-color: white;
+        top: -8px;
+        right: 16px;
+        transform: rotate(45deg);
+      }
+    }
+  }
 }
