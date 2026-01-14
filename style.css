@@ -156,7 +156,7 @@ input[type='range'] {
   width: 100%;
   cursor: pointer;
   border-radius: 8px;
-  background-color: hsl(229, 57%, 11%);
+  background-color: hsl(229, 57%, 16%);
   margin-top: 16px;
 }
 
@@ -220,6 +220,7 @@ input[type='range']::-moz-range-thumb {
     .status {
       align-self: flex-end;
       flex: 2;
+      text-align: start;
 
       .storage-left {
         top: -40%;
